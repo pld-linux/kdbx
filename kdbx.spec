@@ -12,10 +12,11 @@ Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 Patch0:		%{name}-kde.patch
 Patch1:		%{name}-am.patch
 URL:		http://sourceforge.net/projects/ol2mbox/
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:  kdelibs-devel >= 9:3.2.0
-BuildRequires:  unsermake >= 040805
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	sed >= 4.0
+BuildRequires:	unsermake >= 040805
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +32,8 @@ formacie skrzynek (mailbox).
 %prep
 %setup -q -n %{name} -a1
 %patch0 -p1
-%patch1 -p1 -b .ziew
+%patch1 -p1
+
 %{__sed} -i -e "s,-ansi,,g" admin/*.*
 
 %build
