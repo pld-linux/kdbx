@@ -8,7 +8,7 @@ Group:		Applications/File
 Source0:	http://dl.sourceforge.net/ol2mbox/%{name}-%{version}.tar.gz
 # Source0-md5:	933e285d151d1077edd0c92c98db7e1a
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
-# Source1-md5:  81e0b2f79ef76218381270960ac0f55f
+# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 Patch0:		%{name}-kde.patch
 Patch1:		%{name}-am.patch
 URL:		http://sourceforge.net/projects/ol2mbox/
