@@ -18,7 +18,7 @@ Outlook Express 5.5 Directory. You can extract these emails into
 mailbox files.
 
 %description -l pl
-KDbxViewer to program wczytuj±cy sturkturê folderów z katalogu Outlook
+KDbxViewer to program wczytuj±cy strukturê folderów z katalogu Outlook
 Expressa 5.5. Listy mo¿na przekonwertowaæ do plików w standardowym
 formacie skrzynek (mailbox).
 
