@@ -1,0 +1,64 @@
+--- kdbx/kdbx/kdbxlistitem.cpp.orig	Wed Oct 17 12:51:45 2001
++++ kdbx/kdbx/kdbxlistitem.cpp	Fri Nov 28 15:22:35 2003
+@@ -16,6 +16,7 @@
+  ***************************************************************************/
+ 
+ #include "kdbxlistitem.h"
++#include <qpainter.h>
+ 
+ KdbxListItem::KdbxListItem(QListViewItem *i)
+ 	:QListViewItem(i) {
+--- kdbx/kdbx/kdbxview.cpp.orig	Wed Oct 17 14:59:16 2001
++++ kdbx/kdbx/kdbxview.cpp	Fri Nov 28 15:25:45 2003
+@@ -60,7 +60,7 @@
+ 
+  	emaillist->setSorting(2); //date column
+  	emaillist->setShowSortIndicator(TRUE);
+- 	emaillist->setSelectionModeExt(KListView::Konqueror);
++ 	emaillist->setSelectionModeExt(KListView::Extended);
+  	emaillist->setAllColumnsShowFocus(TRUE);
+  	
+  	browser = new KTextBrowser(split2);
+--- kdbx/kdbx/kdbx.cpp.orig	Wed Oct 17 15:03:04 2001
++++ kdbx/kdbx/kdbx.cpp	Fri Nov 28 15:27:41 2003
+@@ -28,6 +28,7 @@
+ #include <klocale.h>
+ #include <kconfig.h>
+ #include <kstdaction.h>
++#include <kstatusbar.h>
+ 
+ // application specific includes
+ #include "kdbx.h"
+--- kdbx/kdbx/kdbx.h.orig	Wed Oct 17 11:36:35 2001
++++ kdbx/kdbx/kdbx.h	Fri Nov 28 15:30:41 2003
+@@ -63,7 +63,7 @@
+     ~KdbxApp();
+     /** opens a file specified by commandline option
+      */
+-    void openDocumentFile(const KURL& url=0);
++    void openDocumentFile(const KURL& url);
+     /** returns a pointer to the current document connected to the KTMainWindow instance and is used by
+      * the View class to access the document object's methods
+      */	
+--- kdbx/kdbx/main.cpp.orig	Sat May 26 14:19:43 2001
++++ kdbx/kdbx/main.cpp	Fri Nov 28 15:31:28 2003
+@@ -64,7 +64,7 @@
+ 		}
+ 		else
+ 		{
+-		  kdbx->openDocumentFile();
++		  kdbx->openDocumentFile(NULL);
+ 		}
+ 		args->clear();
+   }
+--- kdbx/kdbx/Makefile.in.orig	Tue Dec 25 12:21:12 2001
++++ kdbx/kdbx/Makefile.in	Fri Nov 28 15:32:13 2003
+@@ -203,7 +203,7 @@
+ 
+ bin_PROGRAMS = kdbx
+ kdbx_SOURCES = libdbx++.cpp kdbxfldexportdlg.cpp kdbxfolderlistitem.cpp kdbxlistitem.cpp timeconv.c libdbx.c kdbxview.cpp kdbxdoc.cpp kdbx.cpp main.cpp 
+-kdbx_LDADD = -lkfile -lkdeui -lkdecore $(LIB_QT) $(LIBSOCKET)
++kdbx_LDADD = -lkio -lkdeui -lkdecore $(LIB_QT) $(LIBSOCKET)
+ 
+ EXTRA_DIST = main.cpp kdbx.cpp kdbx.h kdbxdoc.cpp kdbxdoc.h kdbxview.cpp kdbxview.h kdbx.desktop lo32-app-kdbx.png lo16-app-kdbx.png libdbx.c libdbx.h define.h dbxtree.h common.h timeconv.c timeconv.h kdbxlistitem.cpp kdbxlistitem.h kdbxui.rc kdbxfolderlistitem.cpp kdbxfolderlistitem.h kdbxfldexportdlg.cpp kdbxfldexportdlg.h libdbx++.cpp libdbx++.h export.xpm 
+ 
