@@ -1,0 +1,28 @@
+--- kdbx/kdbx/Makefile.am.ziew	2001-12-23 16:52:58.000000000 +0100
++++ kdbx/kdbx/Makefile.am	2004-09-01 17:55:08.287118440 +0200
+@@ -1,18 +1,18 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ bin_PROGRAMS = kdbx
+ kdbx_SOURCES = libdbx++.cpp kdbxfldexportdlg.cpp kdbxfolderlistitem.cpp kdbxlistitem.cpp timeconv.c libdbx.c kdbxview.cpp kdbxdoc.cpp kdbx.cpp main.cpp 
+-kdbx_LDADD   =  -lkfile -lkdeui -lkdecore $(LIB_QT) $(LIBSOCKET)
++kdbx_LDADD   =  -lkio -lkdeui -lkdecore $(LIB_QT) $(LIBSOCKET)
+ 
+ 
+ EXTRA_DIST = main.cpp kdbx.cpp kdbx.h kdbxdoc.cpp kdbxdoc.h kdbxview.cpp kdbxview.h kdbx.desktop lo32-app-kdbx.png lo16-app-kdbx.png libdbx.c libdbx.h define.h dbxtree.h common.h timeconv.c timeconv.h kdbxlistitem.cpp kdbxlistitem.h kdbxui.rc kdbxfolderlistitem.cpp kdbxfolderlistitem.h kdbxfldexportdlg.cpp kdbxfldexportdlg.h libdbx++.cpp libdbx++.h export.xpm 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_appsdir)/Applications/
+-	$(INSTALL_DATA) $(srcdir)/kdbx.desktop $(kde_appsdir)/Applications/kdbx.desktop
+-	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
+-	$(INSTALL_DATA) $(srcdir)/lo32-app-kdbx.png $(kde_icondir)/locolor/32x32/apps/kdbx.png
+-	$(mkinstalldirs) $(kde_icondir)/locolor/16x16/apps/
+-	$(INSTALL_DATA) $(srcdir)/lo16-app-kdbx.png $(kde_icondir)/locolor/16x16/apps/kdbx.png
++	$(mkinstalldirs) $(DESTDIR)$(kde_appsdir)
++	$(INSTALL_DATA) $(srcdir)/kdbx.desktop $(DESTDIR)$(kde_appsdir)/kdbx.desktop
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/hicolor/32x32/apps/
++	$(INSTALL_DATA) $(srcdir)/lo32-app-kdbx.png $(DESTDIR)$(kde_icondir)/hicolor/32x32/apps/kdbx.png
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/hicolor/16x16/apps/
++	$(INSTALL_DATA) $(srcdir)/lo16-app-kdbx.png $(DESTDIR)$(kde_icondir)/hicolor/16x16/apps/kdbx.png
+ 
+ uninstall-local:
+ 	-rm -f $(kde_appsdir)/Applications/kdbx.desktop
