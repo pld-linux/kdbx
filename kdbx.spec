@@ -2,9 +2,9 @@ Summary:	KDbxViewer - loading folder structure from Outlook Express 5.5 Director
 Summary(pl):	KDbxViewer - wczytywanie struktury folderów z katalogu Outlook Expressa 5.5
 Name:		kdbx
 Version:	0.7.1
-Release:	2
+Release:	3
 License:	GPL
-Group:		Applications/Files
+Group:		Applications/File
 Source0:	http://dl.sourceforge.net/ol2mbox/%{name}-%{version}.tar.gz
 # Source0-md5:	933e285d151d1077edd0c92c98db7e1a
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
