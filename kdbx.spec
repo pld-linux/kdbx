@@ -1,8 +1,8 @@
-Summary:	KDbxViewer - loading folder structure from Outlook Express 5.5 Directory
+Summary:	KDbxViewer - loading folder structure from Outlook Express 5.5 directory
 Summary(pl):	KDbxViewer - wczytywanie struktury folderów z katalogu Outlook Expressa 5.5
 Name:		kdbx
 Version:	0.7.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/ol2mbox/%{name}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 # Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 Patch0:		%{name}-kde.patch
 Patch1:		%{name}-am.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://sourceforge.net/projects/ol2mbox/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 KDbxViewer is a program that can load the folder structure given in an
-Outlook Express 5.5 Directory. You can extract these emails into
+Outlook Express 5.5 directory. You can extract these emails into
 mailbox files.
 
 %description -l pl
@@ -56,8 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
-
-echo "Categories=Qt;KDE;Utility;" >> $RPM_BUILD_ROOT%{_desktopdir}/kbdx.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
