@@ -1,5 +1,5 @@
---- ../BUILD/kdbx/kdbx/kdbx.desktop~	2005-05-13 11:36:02.000000000 +0200
-+++ ../BUILD/kdbx/kdbx/kdbx.desktop	2005-05-13 11:37:17.000000000 +0200
+--- kdbx/kdbx/kdbx.desktop~	2005-05-13 11:36:02.000000000 +0200
++++ kdbx/kdbx/kdbx.desktop	2005-05-13 11:37:17.000000000 +0200
 @@ -1,12 +1,13 @@
  # KDE Config File  
  [Desktop Entry]
