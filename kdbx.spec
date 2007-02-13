@@ -1,5 +1,5 @@
 Summary:	KDbxViewer - loading folder structure from Outlook Express 5.5 directory
-Summary(pl.UTF-8):   KDbxViewer - wczytywanie struktury folderów z katalogu Outlook Expressa 5.5
+Summary(pl.UTF-8):	KDbxViewer - wczytywanie struktury folderów z katalogu Outlook Expressa 5.5
 Name:		kdbx
 Version:	0.7.1
 Release:	5
